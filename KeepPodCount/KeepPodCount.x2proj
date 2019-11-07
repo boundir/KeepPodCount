@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>0390e784-1cf1-4757-84ef-e1adc0f52bf9</Guid>
+    <Name>KeepPodCount</Name>
+    <Description>Description of My XCOM 2 Mod.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>KeepPodCount</AssemblyName>
+    <RootNamespace>KeepPodCount</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Config\Chosen" />
+    <Folder Include="Config\Rulers" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\KeepPodCount\" />
+    <Folder Include="Src\KeepPodCount\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Chosen\XComEncounters.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\Rulers\XComEncounters.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEncounters.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComKeepPodCount.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\KeepPodCount\Classes\OPTC_KPC.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\KeepPodCount\Classes\X2DownloadableContentInfo_KeepPodCount.uc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
