@@ -3,27 +3,20 @@
   <PropertyGroup>
     <Guid>0390e784-1cf1-4757-84ef-e1adc0f52bf9</Guid>
     <Name>KeepPodCount</Name>
-    <Description>Description of My XCOM 2 Mod.</Description>
+    <Description>As you know having a Chosen or a Ruler in mission always remove a pod from that mission. This mod will add it back.
+tags= War of the Chosen, Gameplay, Alien, Chosen, Rulers, Party</Description>
     <SteamPublishID>0</SteamPublishID>
     <AssemblyName>KeepPodCount</AssemblyName>
     <RootNamespace>KeepPodCount</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Config\" />
-    <Folder Include="Config\Chosen" />
-    <Folder Include="Config\Rulers" />
     <Folder Include="Localization\" />
     <Folder Include="Src\" />
     <Folder Include="Src\KeepPodCount\" />
     <Folder Include="Src\KeepPodCount\Classes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\Chosen\XComEncounters.ini">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Config\Rulers\XComEncounters.ini">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Config\XComEncounters.ini">
       <SubType>Content</SubType>
     </Content>
