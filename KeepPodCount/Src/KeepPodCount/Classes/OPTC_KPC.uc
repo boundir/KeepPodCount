@@ -90,4 +90,39 @@ static function PatchMissionSchedules()
 			}
 		}
 	}
+	// Verify();
+}
+
+static function Verify()
+{
+	local XComTacticalMissionManager MissionManager;
+	local int i, j;
+
+	MissionManager = `TACTICALMISSIONMGR;
+
+	for(i = 0; i < MissionManager.MissionSchedules.Length; i++)
+	{
+		`KPG_Log("ScheduleID : " $ MissionManager.MissionSchedules[i].ScheduleID);
+		for(j = 0; j < MissionManager.MissionSchedules[i].PrePlacedEncounters.Length; j++)
+		{
+			`KPG_Log("EncounterID : " $ MissionManager.MissionSchedules[i].PrePlacedEncounters[j].EncounterID);
+		}
+	}
+
+	for (i = 0; i < MissionManager.EncounterBuckets.Length; i++)
+	{
+		`KPG_Log("EncounterBucketID : " $ MissionManager.EncounterBuckets[i].EncounterBucketID);
+		for (j = 0; j < MissionManager.EncounterBuckets[i].EncounterIDs.Length; j++)
+		{
+			`KPG_Log("Bucket EncounterID : " $ MissionManager.EncounterBuckets[i].EncounterIDs[j].EncounterID);
+			if(MissionManager.EncounterBuckets[i].EncounterIDs[j].IncludeTacticalTag != '')
+			{
+				`KPG_Log("IncludeTacticalTag : " $ MissionManager.EncounterBuckets[i].EncounterIDs[j].IncludeTacticalTag);
+			}
+			if(MissionManager.EncounterBuckets[i].EncounterIDs[j].ExcludeTacticalTag != '')
+			{
+				`KPG_Log("ExcludeTacticalTag : " $ MissionManager.EncounterBuckets[i].EncounterIDs[j].ExcludeTacticalTag);
+			}
+		}
+	}
 }

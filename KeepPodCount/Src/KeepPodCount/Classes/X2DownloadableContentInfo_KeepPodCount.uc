@@ -10,16 +10,18 @@
 
 class X2DownloadableContentInfo_KeepPodCount extends X2DownloadableContentInfo;
 
-/// <summary>
-/// This method is run if the player loads a saved game that was created prior to this DLC / Mod being installed, and allows the 
-/// DLC / Mod to perform custom processing in response. This will only be called once the first time a player loads a save that was
-/// create without the content installed. Subsequent saves will record that the content was installed.
-/// </summary>
-static event OnLoadedSavedGame()
-{}
+`define KPG_Log(msg) `Log(`msg,, 'KeepPodCount')
 
-/// <summary>
-/// Called when the player starts a new campaign while this DLC / Mod is installed
-/// </summary>
-static event InstallNewCampaign(XComGameState StartState)
-{}
+/*
+static function PostEncounterCreation(out name EncounterName, out PodSpawnInfo Encounter, int ForceLevel, int AlertLevel, optional XComGameState_BaseObject SourceObject)
+{
+	local XComGameState_MissionSite Mission;
+
+	Mission = XComGameState_MissionSite(SourceObject);
+
+	`KPG_Log("Mission: " $ Mission.GeneratedMission.Mission.MissionName);
+	`KPG_Log("MissionScheduleName: " $ Mission.SelectedMissionData.SelectedMissionScheduleName);
+	`KPG_Log("EncounterName: " $ EncounterName);
+	`KPG_Log("SelectedCharacterTemplateName: " $ Encounter.SelectedCharacterTemplateNames[0]);
+}
+*/
