@@ -8,7 +8,7 @@
 //  Copyright (c) 2016 Firaxis Games, Inc. All rights reserved.
 //---------------------------------------------------------------------------------------
 
-class X2DownloadableContentInfo_KeepPodCount extends X2DownloadableContentInfo config(KeepPodCount);
+class X2DownloadableContentInfo_KeepPodCount extends X2DownloadableContentInfo;
 
 `define KPG_Log(msg) `Log(`msg, default.EnableLogs, 'KeepPodCount')
 
@@ -26,9 +26,9 @@ struct AdditionalPod
 	var PrePlacedEncounterPair AdditionalPrePlacedEncounter;
 };
 
-var config array<KeepPodEncounters> RulerEncounters;
-var config array<AdditionalPod> MissionScheduleModifier;
-var config array<Name> ExcludedMissions;
+var config(KeepPodCount) array<KeepPodEncounters> RulerEncounters;
+var config(KeepPodCount) array<AdditionalPod> MissionScheduleModifier;
+var config(KeepPodCount) array<Name> ExcludedMissions;
 
 
 /*
@@ -47,7 +47,7 @@ static function PostEncounterCreation(out name EncounterName, out PodSpawnInfo E
 
 static event OnPostTemplatesCreated()
 {
-	`Log("Keep Pod Count loaded.", , 'KeepPodCount');
+	`Log("Keep Pod Count loaded.", , name(default.DLCIdentifier));
 	PatchRulerBuckets();
 	PatchMissionSchedules();
 }
